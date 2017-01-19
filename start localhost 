@@ -1,0 +1,156 @@
+Last login: Wed Jan 18 16:27:05 on ttys000
+scrammond-mbp:~ suzy$ pwd
+/Users/suzy
+scrammond-mbp:~ suzy$ ls
+Applications	Documents	Library		Music		Public
+Desktop		Downloads	Movies		Pictures	node_modules
+scrammond-mbp:~ suzy$ cd Desktop/
+.DS_Store
+.localized
+2017 Objectives.pages
+Horizon Update 12-15-16.pptx
+Screen Shot 2017-01-17 at 1.59.22 PM.png
+Screen Shot 2017-01-17 at 2.00.38 PM.png
+Screen Shot 2017-01-17 at 5.55.20 PM.png
+Screen Shot 2017-01-17 at 5.57.58 PM.png
+extension-api-examples-master/
+scrammond-mbp:~ suzy$ cd Desktop/extension-api-examples-master/
+scrammond-mbp:extension-api-examples-master suzy$ npm run watch
+
+> waycool@1.0.0 watch /Users/suzy/Desktop/extension-api-examples-master
+> webpack-dev-server --progress --colors --https
+
+  0% compile https://localhost:4000/webpack-dev-server/
+webpack result is served from /
+content is served from /Users/suzy/Desktop/extension-api-examples-master/dist
+Hash: 7348ecab664da9e0b269  
+Version: webpack 1.14.0
+Time: 659ms
+               Asset     Size  Chunks             Chunk Names
+       app.bundle.js  11.6 kB       0  [emitted]  app
+controller.bundle.js  6.66 kB       1  [emitted]  controller
+     controller.html  1.41 kB          [emitted]  
+            app.html  5.31 kB          [emitted]  
+chunk    {0} app.bundle.js (app) 10 kB [rendered]
+    [0] ./src/javascript/app.js 10 kB {0} [built]
+chunk    {1} controller.bundle.js (controller) 5.19 kB [rendered]
+    [0] ./src/javascript/controller.js 5.19 kB {1} [built]
+Child html-webpack-plugin for "controller.html":
+    chunk    {0} controller.html 542 kB [rendered]
+        [0] ./~/html-webpack-plugin/lib/loader.js!./src/html/controller.html 1.81 kB {0} [built]
+        [1] ./~/lodash/lodash.js 540 kB {0} [built]
+        [2] (webpack)/buildin/module.js 251 bytes {0} [built]
+Child html-webpack-plugin for "app.html":
+    chunk    {0} app.html 546 kB [rendered]
+        [0] ./~/html-webpack-plugin/lib/loader.js!./src/html/app.html 5.79 kB {0} [built]
+        [1] ./~/lodash/lodash.js 540 kB {0} [built]
+        [2] (webpack)/buildin/module.js 251 bytes {0} [built]
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 7348ecab664da9e0b269  
+Version: webpack 1.14.0
+Time: 99ms
+   Asset    Size  Chunks             Chunk Names
+app.html  5.3 kB          [emitted]  
+chunk    {0} app.bundle.js (app) 10 kB
+     + 1 hidden modules
+chunk    {1} controller.bundle.js (controller) 5.19 kB
+     + 1 hidden modules
+Child html-webpack-plugin for "controller.html":
+    chunk    {0} controller.html 542 kB
+         + 3 hidden modules
+Child html-webpack-plugin for "app.html":
+    chunk    {0} app.html 546 kB [rendered]
+        [0] ./~/html-webpack-plugin/lib/loader.js!./src/html/app.html 5.78 kB {0} [built]
+         + 2 hidden modules
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 7348ecab664da9e0b269  
+Version: webpack 1.14.0
+Time: 79ms
+   Asset     Size  Chunks             Chunk Names
+app.html  5.31 kB          [emitted]  
+chunk    {0} app.bundle.js (app) 10 kB
+     + 1 hidden modules
+chunk    {1} controller.bundle.js (controller) 5.19 kB
+     + 1 hidden modules
+Child html-webpack-plugin for "controller.html":
+    chunk    {0} controller.html 542 kB
+         + 3 hidden modules
+Child html-webpack-plugin for "app.html":
+    chunk    {0} app.html 546 kB [rendered]
+        [0] ./~/html-webpack-plugin/lib/loader.js!./src/html/app.html 5.79 kB {0} [built]
+         + 2 hidden modules
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 7348ecab664da9e0b269  
+Version: webpack 1.14.0
+Time: 75ms
+   Asset     Size  Chunks             Chunk Names
+app.html  5.32 kB          [emitted]  
+chunk    {0} app.bundle.js (app) 10 kB
+     + 1 hidden modules
+chunk    {1} controller.bundle.js (controller) 5.19 kB
+     + 1 hidden modules
+Child html-webpack-plugin for "controller.html":
+    chunk    {0} controller.html 542 kB
+         + 3 hidden modules
+Child html-webpack-plugin for "app.html":
+    chunk    {0} app.html 546 kB [rendered]
+        [0] ./~/html-webpack-plugin/lib/loader.js!./src/html/app.html 5.8 kB {0} [built]
+         + 2 hidden modules
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: 7348ecab664da9e0b269  
+Version: webpack 1.14.0
+Time: 73ms
+   Asset     Size  Chunks             Chunk Names
+app.html  2.15 kB          [emitted]  
+chunk    {0} app.bundle.js (app) 10 kB
+     + 1 hidden modules
+chunk    {1} controller.bundle.js (controller) 5.19 kB
+     + 1 hidden modules
+Child html-webpack-plugin for "controller.html":
+    chunk    {0} controller.html 542 kB
+         + 3 hidden modules
+Child html-webpack-plugin for "app.html":
+    chunk    {0} app.html 542 kB [rendered]
+        [0] ./~/html-webpack-plugin/lib/loader.js!./src/html/app.html 2.59 kB {0} [built]
+         + 2 hidden modules
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: f0189306794d52614a1b  
+Version: webpack 1.14.0
+Time: 29ms
+               Asset     Size  Chunks             Chunk Names
+controller.bundle.js  6.44 kB       1  [emitted]  controller
+chunk    {0} app.bundle.js (app) 10 kB
+     + 1 hidden modules
+chunk    {1} controller.bundle.js (controller) 4.97 kB [rendered]
+    [0] ./src/javascript/controller.js 4.97 kB {1} [built]
+Child html-webpack-plugin for "controller.html":
+    chunk    {0} controller.html 542 kB
+         + 3 hidden modules
+Child html-webpack-plugin for "app.html":
+    chunk    {0} app.html 542 kB
+         + 3 hidden modules
+webpack: bundle is now VALID.
+webpack: bundle is now INVALID.
+Hash: f0189306794d52614a1b  
+Version: webpack 1.14.0
+Time: 71ms
+   Asset     Size  Chunks             Chunk Names
+app.html  5.32 kB          [emitted]  
+chunk    {0} app.bundle.js (app) 10 kB
+     + 1 hidden modules
+chunk    {1} controller.bundle.js (controller) 4.97 kB
+     + 1 hidden modules
+Child html-webpack-plugin for "controller.html":
+    chunk    {0} controller.html 542 kB
+         + 3 hidden modules
+Child html-webpack-plugin for "app.html":
+    chunk    {0} app.html 546 kB [rendered]
+        [0] ./~/html-webpack-plugin/lib/loader.js!./src/html/app.html 5.8 kB {0} [built]
+         + 2 hidden modules
+webpack: bundle is now VALID.
+
