@@ -18,10 +18,10 @@
 **/
 
 // Create our own local service pertaining to the application module
-// We have namespaced local services with "hello:"
-var helloAppService = SYMPHONY.services.register("hello:app");
+// We have namespaced local services with "1854a949f53b49039b4a1a5038629922:"
+var 1854a949f53b49039b4a1a5038629922AppService = SYMPHONY.services.register("1854a949f53b49039b4a1a5038629922:app");
 
-SYMPHONY.remote.hello().then(function(data) {
+SYMPHONY.remote.1854a949f53b49039b4a1a5038629922().then(function(data) {
 
     // Set the theme of the app module
     var themeColor = data.themeV2.name;
@@ -29,7 +29,7 @@ SYMPHONY.remote.hello().then(function(data) {
     // You must add the symphony-external-app class to the body element
     document.body.className = "symphony-external-app " + themeColor + " " + themeSize;
 
-    SYMPHONY.application.connect("hello", ["modules", "applications-nav", "ui", "share"], ["hello:app"]).then(function(response) {
+    SYMPHONY.application.connect("1854a949f53b49039b4a1a5038629922", ["modules", "applications-nav", "ui", "share"], ["1854a949f53b49039b4a1a5038629922:app"]).then(function(response) {
 
         // The userReferenceId is an anonymized random string that can be used for uniquely identifying users.
         // The userReferenceId persists until the application is uninstalled by the user. 
@@ -44,7 +44,7 @@ SYMPHONY.remote.hello().then(function(data) {
 
         // UI: Listen for theme change events
         uiService.listen("themeChangeV2", function() {
-            SYMPHONY.remote.hello().then(function(data) {
+            SYMPHONY.remote.1854a949f53b49039b4a1a5038629922().then(function(data) {
                 themeColor = data.themeV2.name;
                 themeSize = data.themeV2.size;
                 document.body.className = "symphony-external-app " + themeColor + " " + themeSize;
@@ -52,8 +52,8 @@ SYMPHONY.remote.hello().then(function(data) {
         });
 
         // MODULE: Add a menu item to our module
-        modulesService.addMenuItem("hello", "About Hello World App", "hello-menu-item");
-        modulesService.setHandler("hello", "hello:app");
+        modulesService.addMenuItem("1854a949f53b49039b4a1a5038629922", "About 1854a949f53b49039b4a1a5038629922 World App", "1854a949f53b49039b4a1a5038629922-menu-item");
+        modulesService.setHandler("1854a949f53b49039b4a1a5038629922", "1854a949f53b49039b4a1a5038629922:app");
 
         // LEFT NAV: Update the left navigation item's badge count when the "Increment Unread Badge Count" button is clicked using the navService's count method.
         var incrementButton = document.getElementById("increment");
@@ -61,21 +61,21 @@ SYMPHONY.remote.hello().then(function(data) {
         // Bind a click event handler
         incrementButton.addEventListener("click", function(){
             count++;
-            navService.count("hello-nav", count);
+            navService.count("1854a949f53b49039b4a1a5038629922-nav", count);
         });
 
         // MODULE: Hide the main module when the "Hide Main App Module" button is clicked
         var hideButton = document.getElementById("hide");
         hideButton.addEventListener("click", function() {
             // Note that this will not close any modules opened in context of cashtags or articles since we are specifying the main app module's id
-            modulesService.hide("hello");
+            modulesService.hide("1854a949f53b49039b4a1a5038629922");
         });
 
         // MODULE: Change the title of the main module when the "Change Main App Module Title" button is clicked
         var setTitleButton = document.getElementById("set-title");
         setTitleButton.addEventListener("click", function() {
             // Note that this will not change the title of any modules opened in context of cashtags or articles since we are specifying the main app module's id
-            modulesService.setTitle("hello", "New Module Title");
+            modulesService.setTitle("1854a949f53b49039b4a1a5038629922", "New Module Title");
         });
 
         // LEFT NAV: Remove the left navigation item ("Removable Left Nav Item") when the "Remove Left Nav Item" button is clicked
@@ -83,22 +83,22 @@ SYMPHONY.remote.hello().then(function(data) {
         removeLeftNavItemButton.addEventListener("click", function() {
             // Note that this will not remove all left navigation items created by the application - only the one with the specified id
             // After removing the "Removable Left Nav Item" once, you will need to remove and reinstall the app to bring it back
-            navService.remove('hello-nav-remove');
+            navService.remove('1854a949f53b49039b4a1a5038629922-nav-remove');
         });
 
-        // LEFT NAV: Rename the left navigation item ("hello-nav") when the "Rename Left Nav Item" button is clicked
+        // LEFT NAV: Rename the left navigation item ("1854a949f53b49039b4a1a5038629922-nav") when the "Rename Left Nav Item" button is clicked
         var renameLeftNavItemButton = document.getElementById("rename-left-nav-item");
         renameLeftNavItemButton.addEventListener("click", function() {
             // Note that this will not rename all left navigation items created by the application - only the one with the specified id
-            navService.rename('hello-nav', 'New Left Nav Title');
+            navService.rename('1854a949f53b49039b4a1a5038629922-nav', 'New Left Nav Title');
         });
 
         // UI: Remove the Room UI extension button when the "Unregister Room UI Extension" button is clicked
         var unregisterRoomExtensionButton = document.getElementById("unregister-room-extension");
         unregisterRoomExtensionButton.addEventListener("click", function() {
             // Note that this will not remove all UI extensions
-            // This will remove only the extension of a given ID ('hello-room') for a given class ('room')
-            uiService.unregisterExtension('room', 'hello-room');
+            // This will remove only the extension of a given ID ('1854a949f53b49039b4a1a5038629922-room') for a given class ('room')
+            uiService.unregisterExtension('room', '1854a949f53b49039b4a1a5038629922-room');
         });
 
         // SHARE: Trigger Symphony's share modal when the "Share" button is clicked
@@ -174,11 +174,11 @@ SYMPHONY.remote.hello().then(function(data) {
         }
 
         // Implement methods on the application module service
-        helloAppService.implement({
+        1854a949f53b49039b4a1a5038629922AppService.implement({
             // If the menu item is selected, display the About text 
             menuSelect: function(itemId) {
-                if (itemId == "hello-menu-item") {
-                    document.getElementById("about-hello-world-app").className = "";
+                if (itemId == "1854a949f53b49039b4a1a5038629922-menu-item") {
+                    document.getElementById("about-1854a949f53b49039b4a1a5038629922-world-app").className = "";
                 }
             }
         });
