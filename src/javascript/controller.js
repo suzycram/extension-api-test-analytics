@@ -22,7 +22,7 @@
 var 1854a949f53b49039b4a1a5038629922ControllerService = SYMPHONY.services.register("1854a949f53b49039b4a1a5038629922:controller");
 
 // All Symphony services are namespaced with SYMPHONY
-SYMPHONY.remote.1854a949f53b49039b4a1a5038629922().then(function(data) {
+SYMPHONY.remote.hello().then(function(data) {
 
     // Register our application with the Symphony client:
     // Subscribe the application to remote (i.e. Symphony's) services
@@ -37,20 +37,11 @@ SYMPHONY.remote.1854a949f53b49039b4a1a5038629922().then(function(data) {
         // Subscribe to Symphony's services
         var modulesService = SYMPHONY.services.subscribe("modules");
         var navService = SYMPHONY.services.subscribe("applications-nav");
-        var uiService = SYMPHONY.services.subscribe("ui");
-        var shareService = SYMPHONY.services.subscribe("share");
+
 
         // LEFT NAV: Add an entry to the left navigation for our application
         navService.add("1854a949f53b49039b4a1a5038629922-nav", "Symphony Analytics", "1854a949f53b49039b4a1a5038629922:controller");
 
-        // UI: Add elements to the Symphony user interface: 
-        // buttons on IMs/MIMs/rooms, links on cashtag/hashtag hover cards and settings
-        uiService.registerExtension("single-user-im", "1854a949f53b49039b4a1a5038629922-im", "1854a949f53b49039b4a1a5038629922:controller", {label: "IM Button", data: {"datetime": Date()}});
-        uiService.registerExtension("multi-user-im", "1854a949f53b49039b4a1a5038629922-mim", "1854a949f53b49039b4a1a5038629922:controller", {label: "MIM Button"});
-        uiService.registerExtension("room", "1854a949f53b49039b4a1a5038629922-room", "1854a949f53b49039b4a1a5038629922:controller", {label: "Room Button"});
-        uiService.registerExtension("hashtag", "1854a949f53b49039b4a1a5038629922-hashtag", "1854a949f53b49039b4a1a5038629922:controller", {label: "Hashtag Link"});
-        uiService.registerExtension("cashtag", "1854a949f53b49039b4a1a5038629922-cashtag", "1854a949f53b49039b4a1a5038629922:controller", {label: "Cashtag Link"});
-        uiService.registerExtension("settings", "1854a949f53b49039b4a1a5038629922-settings", "1854a949f53b49039b4a1a5038629922:controller", {label: "Settings Link"});
 
         // SHARE: Set the controller that implements the "link" method invoked when shared articles are clicked on.
         shareService.handleLink("article", "1854a949f53b49039b4a1a5038629922:controller");
