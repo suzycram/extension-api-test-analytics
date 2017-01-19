@@ -43,14 +43,12 @@ SYMPHONY.remote.hello().then(function(data) {
         navService.add("1854a949f53b49039b4a1a5038629922-nav", "Symphony Analytics", "1854a949f53b49039b4a1a5038629922:controller");
 
 
-        // SHARE: Set the controller that implements the "link" method invoked when shared articles are clicked on.
-        shareService.handleLink("article", "1854a949f53b49039b4a1a5038629922:controller");
-
         // Implement some methods on our local service. These will be invoked by user actions.
         analyticsControllerService.implement({
 
             // LEFT NAV & MODULE: When the left navigation item is clicked on, invoke Symphony's module service to show our application in the grid
             select: function(id) {
+                console.log("left nav selected");
                 if (id == "1854a949f53b49039b4a1a5038629922-nav") {
                    // Focus the left navigation item when clicked
                     navService.focus("1854a949f53b49039b4a1a5038629922-nav"); 
@@ -63,22 +61,6 @@ SYMPHONY.remote.hello().then(function(data) {
                 // Focus the module after it is shown
                 modulesService.focus("1854a949f53b49039b4a1a5038629922");
             },
-
-            // SHARE: Open our app in the context of an article:
-            // Put the article in the moudle title.
-            // Include the article in the URL parameters.
-            link: function(type, articleId) {
-                if(type == "article") {
-                    var moduleTitle = "1854a949f53b49039b4a1a5038629922 World App: " + articleId;
-                    modulesService.show("1854a949f53b49039b4a1a5038629922-article", {title: moduleTitle}, "1854a949f53b49039b4a1a5038629922:controller", "https://localhost:4000/app.html?article=" + articleId, {
-                        "canFloat": true,
-                        // Use parentModuleId to open a new module without closing the original module ("1854a949f53b49039b4a1a5038629922")
-                        "parentModuleId": "1854a949f53b49039b4a1a5038629922"
-                    });
-                    modulesService.focus("1854a949f53b49039b4a1a5038629922-article");
-                }    
-            }
-
         });
     }.bind(this))
 }.bind(this));
