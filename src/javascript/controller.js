@@ -18,16 +18,16 @@
 **/
 
 // Create our own local controller service.
-// We have namespaced local services with "hello:"
-var helloControllerService = SYMPHONY.services.register("hello:controller");
+// We have namespaced local services with "1854a949f53b49039b4a1a5038629922:"
+var 1854a949f53b49039b4a1a5038629922ControllerService = SYMPHONY.services.register("1854a949f53b49039b4a1a5038629922:controller");
 
 // All Symphony services are namespaced with SYMPHONY
-SYMPHONY.remote.hello().then(function(data) {
+SYMPHONY.remote.1854a949f53b49039b4a1a5038629922().then(function(data) {
 
     // Register our application with the Symphony client:
     // Subscribe the application to remote (i.e. Symphony's) services
     // Register our own local services
-    SYMPHONY.application.register("hello", ["modules", "applications-nav", "ui", "share"], ["hello:controller"]).then(function(response) {
+    SYMPHONY.application.register("1854a949f53b49039b4a1a5038629922", ["modules", "applications-nav", "ui", "share"], ["1854a949f53b49039b4a1a5038629922:controller"]).then(function(response) {
 
         // The userReferenceId is an anonymized random string that can be used for uniquely identifying users.
         // The userReferenceId persists until the application is uninstalled by the user. 
@@ -41,36 +41,36 @@ SYMPHONY.remote.hello().then(function(data) {
         var shareService = SYMPHONY.services.subscribe("share");
 
         // LEFT NAV: Add an entry to the left navigation for our application
-        navService.add("hello-nav", "Symphony Analytics", "hello:controller");
+        navService.add("1854a949f53b49039b4a1a5038629922-nav", "Symphony Analytics", "1854a949f53b49039b4a1a5038629922:controller");
 
         // UI: Add elements to the Symphony user interface: 
         // buttons on IMs/MIMs/rooms, links on cashtag/hashtag hover cards and settings
-        uiService.registerExtension("single-user-im", "hello-im", "hello:controller", {label: "IM Button", data: {"datetime": Date()}});
-        uiService.registerExtension("multi-user-im", "hello-mim", "hello:controller", {label: "MIM Button"});
-        uiService.registerExtension("room", "hello-room", "hello:controller", {label: "Room Button"});
-        uiService.registerExtension("hashtag", "hello-hashtag", "hello:controller", {label: "Hashtag Link"});
-        uiService.registerExtension("cashtag", "hello-cashtag", "hello:controller", {label: "Cashtag Link"});
-        uiService.registerExtension("settings", "hello-settings", "hello:controller", {label: "Settings Link"});
+        uiService.registerExtension("single-user-im", "1854a949f53b49039b4a1a5038629922-im", "1854a949f53b49039b4a1a5038629922:controller", {label: "IM Button", data: {"datetime": Date()}});
+        uiService.registerExtension("multi-user-im", "1854a949f53b49039b4a1a5038629922-mim", "1854a949f53b49039b4a1a5038629922:controller", {label: "MIM Button"});
+        uiService.registerExtension("room", "1854a949f53b49039b4a1a5038629922-room", "1854a949f53b49039b4a1a5038629922:controller", {label: "Room Button"});
+        uiService.registerExtension("hashtag", "1854a949f53b49039b4a1a5038629922-hashtag", "1854a949f53b49039b4a1a5038629922:controller", {label: "Hashtag Link"});
+        uiService.registerExtension("cashtag", "1854a949f53b49039b4a1a5038629922-cashtag", "1854a949f53b49039b4a1a5038629922:controller", {label: "Cashtag Link"});
+        uiService.registerExtension("settings", "1854a949f53b49039b4a1a5038629922-settings", "1854a949f53b49039b4a1a5038629922:controller", {label: "Settings Link"});
 
         // SHARE: Set the controller that implements the "link" method invoked when shared articles are clicked on.
-        shareService.handleLink("article", "hello:controller");
+        shareService.handleLink("article", "1854a949f53b49039b4a1a5038629922:controller");
 
         // Implement some methods on our local service. These will be invoked by user actions.
-        helloControllerService.implement({
+        1854a949f53b49039b4a1a5038629922ControllerService.implement({
 
             // LEFT NAV & MODULE: When the left navigation item is clicked on, invoke Symphony's module service to show our application in the grid
             select: function(id) {
-                if (id == "hello-nav") {
+                if (id == "1854a949f53b49039b4a1a5038629922-nav") {
                    // Focus the left navigation item when clicked
-                    navService.focus("hello-nav"); 
+                    navService.focus("1854a949f53b49039b4a1a5038629922-nav"); 
                 }
                 
-                modulesService.show("hello", {title: "Symphony Analytics"}, "hello:controller", "https://symphony-ss.domo.com", {
+                modulesService.show("1854a949f53b49039b4a1a5038629922", {title: "Symphony Analytics"}, "1854a949f53b49039b4a1a5038629922:controller", "https://symphony-ss.domo.com", {
                     // You must specify canFloat in the module options so that the module can be pinned
                     "canFloat": true,
                 });
                 // Focus the module after it is shown
-                modulesService.focus("hello");
+                modulesService.focus("1854a949f53b49039b4a1a5038629922");
             },
 
             // SHARE: Open our app in the context of an article:
@@ -78,13 +78,13 @@ SYMPHONY.remote.hello().then(function(data) {
             // Include the article in the URL parameters.
             link: function(type, articleId) {
                 if(type == "article") {
-                    var moduleTitle = "Hello World App: " + articleId;
-                    modulesService.show("hello-article", {title: moduleTitle}, "hello:controller", "https://localhost:4000/app.html?article=" + articleId, {
+                    var moduleTitle = "1854a949f53b49039b4a1a5038629922 World App: " + articleId;
+                    modulesService.show("1854a949f53b49039b4a1a5038629922-article", {title: moduleTitle}, "1854a949f53b49039b4a1a5038629922:controller", "https://localhost:4000/app.html?article=" + articleId, {
                         "canFloat": true,
-                        // Use parentModuleId to open a new module without closing the original module ("hello")
-                        "parentModuleId": "hello"
+                        // Use parentModuleId to open a new module without closing the original module ("1854a949f53b49039b4a1a5038629922")
+                        "parentModuleId": "1854a949f53b49039b4a1a5038629922"
                     });
-                    modulesService.focus("hello-article");
+                    modulesService.focus("1854a949f53b49039b4a1a5038629922-article");
                 }    
             }
 
