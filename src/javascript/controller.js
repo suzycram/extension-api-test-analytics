@@ -19,7 +19,7 @@
 
 // Create our own local controller service.
 // We have namespaced local services with "1854a949f53b49039b4a1a5038629922:"
-var 1854a949f53b49039b4a1a5038629922ControllerService = SYMPHONY.services.register("1854a949f53b49039b4a1a5038629922:controller");
+var analyticsControllerService = SYMPHONY.services.register("1854a949f53b49039b4a1a5038629922:controller");
 
 // All Symphony services are namespaced with SYMPHONY
 SYMPHONY.remote.hello().then(function(data) {
@@ -47,7 +47,7 @@ SYMPHONY.remote.hello().then(function(data) {
         shareService.handleLink("article", "1854a949f53b49039b4a1a5038629922:controller");
 
         // Implement some methods on our local service. These will be invoked by user actions.
-        1854a949f53b49039b4a1a5038629922ControllerService.implement({
+        analyticsControllerService.implement({
 
             // LEFT NAV & MODULE: When the left navigation item is clicked on, invoke Symphony's module service to show our application in the grid
             select: function(id) {
