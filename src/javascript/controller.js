@@ -54,7 +54,7 @@ SYMPHONY.remote.hello().then(function(data) {
                     navService.focus("1854a949f53b49039b4a1a5038629922-nav"); 
                 }
                 
-                modulesService.show("1854a949f53b49039b4a1a5038629922", {title: "Symphony Analytics"}, "1854a949f53b49039b4a1a5038629922:controller", "https://suzycram.github.io/extension-api-test-analytics/src/html/app.html", {
+                modulesService.show("1854a949f53b49039b4a1a5038629922", {title: "Symphony Analytics App"}, "1854a949f53b49039b4a1a5038629922:controller", "https://symphony-ss.domo.com", {
                     // You must specify canFloat in the module options so that the module can be pinned
                     "canFloat": true,
                 });
