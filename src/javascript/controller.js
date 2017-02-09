@@ -54,7 +54,7 @@ SYMPHONY.remote.hello().then(function(data) {
                     navService.focus("SymphonyAnalyticsApp-nav"); 
                 }
                 
-                modulesService.show("SymphonyAnalyticsApp", {title: "Symphony Analytics"}, "SymphonyAnalyticsApp:controller", "https://localhost:4000/app.html", {
+                modulesService.show("SymphonyAnalyticsApp", {title: "Symphony Analytics"}, "SymphonyAnalyticsApp:controller", "https://suzycram.github.io/extension-api-test-analytics/src/html/app.html", {
                     // You must specify canFloat in the module options so that the module can be pinned
                     "canFloat": true,
                 });
