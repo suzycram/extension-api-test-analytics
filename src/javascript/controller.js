@@ -18,8 +18,8 @@
 **/
 
 // Create our own local controller service.
-// We have namespaced local services with "1854a949f53b49039b4a1a5038629922:"
-var analyticsControllerService = SYMPHONY.services.register("1854a949f53b49039b4a1a5038629922:controller");
+// We have namespaced local services with "SymphonyAnalyticsApp:"
+var analyticsControllerService = SYMPHONY.services.register("SymphonyAnalyticsApp:controller");
 
 // All Symphony services are namespaced with SYMPHONY
 SYMPHONY.remote.hello().then(function(data) {
@@ -27,7 +27,7 @@ SYMPHONY.remote.hello().then(function(data) {
     // Register our application with the Symphony client:
     // Subscribe the application to remote (i.e. Symphony's) services
     // Register our own local services
-    SYMPHONY.application.register("1854a949f53b49039b4a1a5038629922", ["modules", "applications-nav", "ui", "share"], ["1854a949f53b49039b4a1a5038629922:controller"]).then(function(response) {
+    SYMPHONY.application.register("SymphonyAnalyticsApp", ["modules", "applications-nav", "ui", "share"], ["SymphonyAnalyticsApp:controller"]).then(function(response) {
 
         // The userReferenceId is an anonymized random string that can be used for uniquely identifying users.
         // The userReferenceId persists until the application is uninstalled by the user. 
@@ -40,7 +40,7 @@ SYMPHONY.remote.hello().then(function(data) {
 
 
         // LEFT NAV: Add an entry to the left navigation for our application
-        navService.add("1854a949f53b49039b4a1a5038629922-nav", "Symphony Analytics", "1854a949f53b49039b4a1a5038629922:controller");
+        navService.add("SymphonyAnalyticsApp-nav", "Symphony Analytics", "SymphonyAnalyticsApp:controller");
 
 
         // Implement some methods on our local service. These will be invoked by user actions.
@@ -49,17 +49,17 @@ SYMPHONY.remote.hello().then(function(data) {
             // LEFT NAV & MODULE: When the left navigation item is clicked on, invoke Symphony's module service to show our application in the grid
             select: function(id) {
                 console.log("left nav selected");
-                if (id == "1854a949f53b49039b4a1a5038629922-nav") {
+                if (id == "SymphonyAnalyticsApp-nav") {
                    // Focus the left navigation item when clicked
-                    navService.focus("1854a949f53b49039b4a1a5038629922-nav"); 
+                    navService.focus("SymphonyAnalyticsApp-nav"); 
                 }
                 
-                modulesService.show("1854a949f53b49039b4a1a5038629922", {title: "Symphony Analytics"}, "1854a949f53b49039b4a1a5038629922:controller", "https://symphony-ss.domo.com", {
+                modulesService.show("SymphonyAnalyticsApp", {title: "Symphony Analytics"}, "SymphonyAnalyticsApp:controller", "https://localhost:4000/app.html", {
                     // You must specify canFloat in the module options so that the module can be pinned
                     "canFloat": true,
                 });
                 // Focus the module after it is shown
-                modulesService.focus("1854a949f53b49039b4a1a5038629922");
+                modulesService.focus("SymphonyAnalyticsApp");
             },
         });
     }.bind(this))
