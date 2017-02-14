@@ -2,12 +2,12 @@
   "applications": [
     {
       "type": "sandbox",
-      "id": "symphonyAnalytics",
+      "id": "1854a949f53b49039b4a1a5038629922",
       "name": "Symphony Analytics",
-      "blurb": "This app allows customers to get analytics from Domo directly within Symphony.",
+      "blurb": "This is a hello world app with a few example extension API invocations!",
       "publisher": "Symphony",
-      "url": "https://anjanadasu.github.io/symphony-analytics-app/controller.html",
-      "domain": "anjanadasu.github.io"
+      "url": "https://suzycram.github.io/extension-api-test-analytics/src/html/controller.html",
+      "domain": "github.io"
     }
   ]
 }
